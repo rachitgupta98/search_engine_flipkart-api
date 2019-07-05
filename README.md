@@ -1,4 +1,4 @@
-#A search engine , where user can search a product (ex. iPhone X, Laptops, Books, T-Shirts etc.)
+# A search engine , where user can search a product (ex. iPhone X, Laptops, Books, T-Shirts etc.)
 
 ## React, Nodejs, Express, Flipkart-API.
 
