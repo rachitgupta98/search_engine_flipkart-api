@@ -1,26 +1,85 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SearchBar from "./components/searchbar";
+import Queryresult from "./components/queryresult";
+import Footer from "./components/footer";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: "",
+      result: []
+    };
+  }
+  handleChange = dbs => e => {
+    this.setState({
+      [dbs]: e.target.value
+    });
+  };
+  handleSubmit = e => {
+    e.preventDefault();
+
+    const { data } = this.state;
+    fetch("/api", {
+      method: "POST",
+      body: JSON.stringify({
+        data: data
+      }),
+      family: 4,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(res => {
+        res.json().then(body => {
+          this.setState({
+            result: body
+          });
+        });
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Error occured,try different search input");
+      });
+  };
+
+  render() {
+    const { result } = this.state;
+    return (
+      <div>
+        <a href="https://github.com/rachitgupta98" style={{ float: "right" }}>
+          <i class="fab fa-github fa-2x" />
         </a>
-      </header>
-    </div>
-  );
+        <SearchBar
+          state={this.state}
+          onValueChange={this.handleChange}
+          onSubmit={this.handleSubmit}
+        />
+        <div className="queryresult">
+          {result.map((v, i) => (
+            <p className="queryresult2">
+              <Queryresult
+                title={v.title}
+                img={v.imgUrl}
+                inStock={v.inStock}
+                offers={v.offers}
+                price={v.price}
+                rating={v.rating}
+                specs={v.specs}
+                charge={v.shipping_chrg}
+                d_time={v.shipping_delivery}
+                key={i}
+              />
+            </p>
+          ))}
+        </div>
+        <p style={{ marginTop: "25%" }}>
+          <Footer />
+        </p>
+      </div>
+    );
+  }
 }
 
 export default App;
