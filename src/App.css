@@ -1,0 +1,30 @@
+.queryresult {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  margin-bottom: 30px;
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 14px;
+}
+.footer-a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-a i {
+  padding: 20px;
+  color: green;
+  font-size: 14px;
+}
