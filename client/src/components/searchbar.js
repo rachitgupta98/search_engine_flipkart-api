@@ -10,10 +10,12 @@ import img from "../image/bg.png";
 const styles = {
   root: {
     padding: "2px 4px",
-    width: 400,
+
     display: "flex",
     marginLeft: "auto",
-    marginRight: "auto"
+    marginRight: "auto",
+    maxWidth: "70%",
+    height: "auto"
   },
   input: {
     marginLeft: 8,

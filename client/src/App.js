@@ -49,7 +49,7 @@ class App extends React.Component {
     return (
       <div>
         <a href="https://github.com/rachitgupta98" style={{ float: "right" }}>
-          <i class="fab fa-github fa-2x" />
+          <i className="fab fa-github fa-2x" />
         </a>
         <SearchBar
           state={this.state}
@@ -58,25 +58,23 @@ class App extends React.Component {
         />
         <div className="queryresult">
           {result.map((v, i) => (
-            <p className="queryresult2">
-              <Queryresult
-                title={v.title}
-                img={v.imgUrl}
-                inStock={v.inStock}
-                offers={v.offers}
-                price={v.price}
-                rating={v.rating}
-                specs={v.specs}
-                charge={v.shipping_chrg}
-                d_time={v.shipping_delivery}
-                key={i}
-              />
-            </p>
+            <Queryresult
+              title={v.title}
+              img={v.imgUrl}
+              inStock={v.inStock}
+              offers={v.offers}
+              price={v.price}
+              rating={v.rating}
+              specs={v.specs}
+              charge={v.shipping_chrg}
+              d_time={v.shipping_delivery}
+              key={i}
+            />
           ))}
         </div>
-        <p style={{ marginTop: "25%" }}>
+        <div style={{ marginTop: "25%" }}>
           <Footer />
-        </p>
+        </div>
       </div>
     );
   }

@@ -98,8 +98,8 @@ class Queryresult extends React.Component {
             style={{ color: "white", backgroundColor: "green" }}
           />
 
-          <IconButton aria-label="Add to favorites">
-            <FavoriteIcon onClick={this.handleFav} />
+          <IconButton aria-label="Add to favorites" onClick={this.handleFav}>
+            <FavoriteIcon />
           </IconButton>
           <IconButton
             className={clsx(classes.expand, {
@@ -117,8 +117,8 @@ class Queryresult extends React.Component {
             <Typography paragraph style={{ color: "red" }}>
               Specs:
             </Typography>
-            {specs.map(v => (
-              <li>{v}</li>
+            {specs.map((v, i) => (
+              <li key={i}>{v}</li>
             ))}
             <p>
               <span style={{ color: "red" }}>Stock:</span>
@@ -135,8 +135,8 @@ class Queryresult extends React.Component {
             <Typography paragraph style={{ color: "red" }}>
               Offers:
             </Typography>
-            {offers.map(v => (
-              <li>{v}</li>
+            {offers.map((v, i) => (
+              <li key={i}>{v}</li>
             ))}
             <br />
             <Typography paragraph style={{ color: "red" }}>
