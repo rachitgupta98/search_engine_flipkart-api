@@ -1,7 +1,8 @@
 var rp = require("request-promise");
+const details = require("./flipkart-api-details");
 var headers = {
-  "Fk-Affiliate-Id": "yuganshch",
-  "Fk-Affiliate-Token": "34adf1305516462d8ce93de45594da81"
+  "Fk-Affiliate-Id": details.Id,
+  "Fk-Affiliate-Token": details.Token
 };
 const count = 10;
 

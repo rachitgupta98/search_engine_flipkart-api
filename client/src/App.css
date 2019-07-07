@@ -5,6 +5,9 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+.queryresult2 {
+  margin-top: 50px;
+}
 .img {
   display: block;
   margin-left: auto;

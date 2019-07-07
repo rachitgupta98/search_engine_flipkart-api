@@ -58,18 +58,20 @@ class App extends React.Component {
         />
         <div className="queryresult">
           {result.map((v, i) => (
-            <Queryresult
-              title={v.title}
-              img={v.imgUrl}
-              inStock={v.inStock}
-              offers={v.offers}
-              price={v.price}
-              rating={v.rating}
-              specs={v.specs}
-              charge={v.shipping_chrg}
-              d_time={v.shipping_delivery}
-              key={i}
-            />
+            <div className="queryresult2" key={i}>
+              <Queryresult
+                title={v.title}
+                img={v.imgUrl}
+                inStock={v.inStock}
+                offers={v.offers}
+                price={v.price}
+                rating={v.rating}
+                specs={v.specs}
+                charge={v.shipping_chrg}
+                d_time={v.shipping_delivery}
+                key={i}
+              />
+            </div>
           ))}
         </div>
         <div style={{ marginTop: "25%" }}>
