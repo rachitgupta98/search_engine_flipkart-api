@@ -8,4 +8,12 @@
 1. clone the repo
 1. npm install
 1. npm start
-1. app running happy coding
+1. app running on localhost:3000
+
+## Set Your Api Credentials 
+
+1. goto flipkart-api-details.js
+1. ID : "your affiliate tracking id"
+3. Token : "your token"
+   
+
